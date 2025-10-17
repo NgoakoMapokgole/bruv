@@ -1,0 +1,43 @@
+    :root {
+      --accent: #bdc007;
+      --primary: #e91e63;
+      --secondary: #03a9f4;
+      --background: #121212;
+      --bgnav: #1f1f1f;
+      --navhover: #333;
+      --text: #fff;
+      --navtext: #111;
+    }
+    body { font-family:'Segoe UI',sans-serif; margin:0; background:var(--background); color:var(--text); display:flex;}
+    /* Sidebar */
+    .sidebar { width:240px; background:var(--bgnav); height:100vh; padding:1rem; position:fixed; top:0; left:0; overflow-y:auto; }
+    .sidebar h2 { text-align:center; margin-bottom:2rem; color:var(--accent); }
+    .sidebar ul { list-style:none; padding:0; }
+    .sidebar ul li { margin:1rem 0; }
+    .sidebar ul li a { text-decoration:none; color:var(--text); display:block; padding:0.6rem 1rem; border-radius:8px; transition:0.3s; }
+    .sidebar ul li a:hover { background:var(--navhover); color:var(--accent); }
+    /* Main */
+    .main { margin-left:240px; flex:1; padding:2rem; }
+    .topbar { background:var(--bgnav); padding:1rem 2rem; border-radius:8px; margin-bottom:2rem; display:flex; justify-content:space-between; align-items:center; }
+    .topbar h1 { font-size:1.5rem; }
+    /* Cards */
+    .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; }
+    .card { background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.3); transition:0.3s; }
+    .card:hover { transform:translateY(-5px); border:1px solid var(--accent); }
+    .card h3 { margin:0 0 0.5rem 0; font-size:1.2rem; color:var(--accent); }
+    .card p { margin:0; font-size:0.9rem; }
+    /* Table */
+    table { width:100%; border-collapse:collapse; margin-top:2rem; }
+    th, td { border:1px solid rgba(255,255,255,0.1); padding:0.8rem; text-align:left; }
+    th { background:var(--bgnav); }
+    tr:hover { background: rgba(189,192,7,0.1); }
+    .status-approved { color: #0f0; font-weight:600; }
+    .status-pending { color: #ffcc00; font-weight:600; }
+    .status-deleted { color: #f00; font-weight:600; }
+
+    .sidebar ul li a.active {
+    background:var(--navhover); color:var(--accent);    /* highlight color */
+    font-weight: bold;
+     /* optional background highlight */
+
+}
