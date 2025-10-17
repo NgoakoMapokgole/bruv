@@ -1,0 +1,1025 @@
+/* ==================== ALL PAGES ==================== */
+
+
+
+/* =========== DARK THEME VARIABLES original =========== */
+:root{
+--text: #fcfcfc;              
+--navtext: #180401;           
+--background: #14181c;        
+--bgnav: #ffffff;             
+--primary: #f21f07;           
+--secondary: #856905;         
+--accent: #bdc007;            
+--navhover: #fade7a;          
+--search: #ccc;               
+} 
+
+/* =========== CSS RESET & BASE STYLES =========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
+}
+
+body{
+  font-family: 'Lexend';     /* Main font family for the entire site */
+  color:var(--text);         /* Use CSS variable for text color */
+  background: var(--background); /* Use CSS variable for background */
+}
+
+/* =========== UNIVERSAL LIST STYLING =========== */
+ul{
+  display:flex;
+  justify-content: center;   /* Center list items horizontally */
+  list-style-type: none;     /* Remove default bullet points */
+}
+
+ul li{
+  margin:0.5rem 2rem;        /* Spacing between list items */
+}
+
+/* =========== HEADER & NAVIGATION =========== */
+header {
+  position: sticky;
+  top: 0; /* Start visible instead of -80px */
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.navbar{
+  display:flex;
+  justify-content: space-between; /* Space out logo, nav, and login */
+  flex-wrap: wrap;           /* Allow wrapping on smaller screens */
+  align-items: center;
+  padding:1rem 2rem;
+  color:var(--navtext);
+  background: var(--bgnav); 
+}
+
+/* =========== LOGO STYLING =========== */
+.logo{
+  font-family: 'Lexend'; 
+  background-color:var(--accent); /* Use accent color for logo background */
+  color:var(--text);             /* Light text color for contrast */
+  border-radius: 5px;
+  padding:5px 10px;
+}
+
+/* =========== NAVIGATION LINKS =========== */
+.nav-links{
+  list-style: none;
+  display:flex;
+  gap:1.5rem;                /* Space between navigation items */
+  margin: 0px auto;          /* Center the navigation links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--navtext);
+  padding: 8px;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out; /* Smooth hover transitions */
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  background-color: var(--accent);
+  color: var(--bgnav);
+}
+
+/* =========== DROPDOWN MENU STYLING =========== */
+.dropdown {
+  position: relative;        /* Positioning context for absolute dropdown */
+}
+
+/* Hide dropdown menu initially */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;                 /* Position directly below parent */
+  left: 0;
+  background-color: var(--bgnav);
+  min-width: 180px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  z-index: 1000;             /* Ensure dropdown appears above other content */
+}
+
+/* Style dropdown links */
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--navtext);
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--accent);
+}
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* =========== NAVBAR LINK STYLING =========== */
+.navbar a{
+  text-decoration: none;
+  color: var(--navtext);
+}
+
+/* =========== SEARCH BAR STYLING =========== */
+.nav-search {
+  display: none;             /* Hidden by default, shown when scrolled */
+}
+
+.scrolled .nav-search{
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.nav-search input {
+  font-family: 'Lexend';
+  padding: 6px 10px;
+  border: 1px solid var(--search);
+  border-radius: 20px 0 0 20px; /* Rounded left side only */
+  outline: none;             /* Remove default browser outline */
+}
+
+.nav-search button {
+  padding: 6px 12px;
+  border: none;
+  background: var(--accent);
+  color: var(--bgnav);
+  border-radius: 0 20px 20px 0; /* Rounded right side only */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-search button:hover {
+  background: var(--navhover);
+}
+
+/* =========== LOGIN SECTION STYLING =========== */
+.login{
+  margin-left: auto;         /* Push login to the right */
+  margin-right: auto;
+}
+
+.login a{
+  text-decoration: none;
+  color: var(--navtext);
+  padding: 8px;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.login a:hover{
+  background-color: var(--accent);
+  color: var(--bgnav);
+}
+
+/* =========== MOBILE MENU TOGGLE =========== */
+.menu-toggle {
+  display: none; /* Hidden by default (desktop view) */
+}
+
+.close-btn button{
+  display: none; /* Hidden by default (desktop view) */
+}
+
+/* =========== FOOTER STYLING =========== */
+
+/* FOOTER BASE STYLES */
+footer {
+  background: linear-gradient(135deg, var(--background) 0%, #1a0400 100%);
+  color: var(--text);
+  padding: 3rem 1rem 1rem;
+  border-top: 3px solid var(--accent); /* Accent color border at top */
+  box-sizing: border-box;
+}
+
+/* FOOTER SECTIONS LAYOUT */
+.footers {
+  display: flex;
+  flex-wrap: wrap;           /* Allow sections to wrap on smaller screens */
+  justify-content: center;   /* Center sections horizontally */
+  gap: 2rem;                 /* Space between sections */
+  max-width: 1200px;         /* Maximum width for content */
+  margin: 0 auto;            /* Center the footer content */
+}
+
+.footers section {
+  flex: 1 1 250px;           /* Flexible sizing: grow, shrink, base 250px */
+  max-width: 300px;          /* Maximum width for each section */
+  text-align: center;        /* Center content within sections */
+}
+
+/* FOOTER HEADINGS STYLING */
+.footers h4 {
+  color: var(--accent);      /* Use accent color for headings */
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footers h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the underline */
+  width: 40px;
+  height: 2px;
+  background: var(--primary);  /* Primary color for underline */
+  border-radius: 2px;
+}
+
+/* FOOTER INFO SECTION SPECIFIC STYLING */
+.footer-info a {
+  font-size: 1.1rem;
+  display: inline-block;
+  color: var(--accent);
+  text-decoration: none;
+  transition: 0.3s;          /* Smooth transition for hover effects */
+}
+
+.footer-info a:hover {
+  transform: translateX(3px); /* Slide effect on hover */
+  color: var(--navhover);
+}
+
+/* AUTHORS SECTION STYLING */
+.footer-authors p {
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.03); /* Semi-transparent background */
+  border-radius: 6px;
+  border-left: 3px solid var(--secondary); /* Secondary color accent border */
+}
+
+.footer-authors a {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-authors a:hover {
+  text-decoration: underline;
+}
+
+/* QUICK LINKS SECTION STYLING */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;    /* Stack links vertically */
+  gap: 0.5rem;               /* Space between links */
+}
+
+.footer-links li {
+  margin: 0;
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.03); /* Subtle background for links */
+  border-radius: 6px;
+  transition: all 0.3s ease; /* Smooth hover transitions */
+}
+
+.footer-links li:hover {
+  background: rgba(189, 192, 7, 0.1); /* Accent color with transparency */
+  transform: translateX(5px); /* Slide effect on hover */
+  border-left: 3px solid var(--accent); /* Accent border on hover */
+}
+
+.footer-links a {
+  display: block;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* SOCIAL MEDIA ICONS STYLING */
+.footer-social p {
+  display: flex;
+  justify-content: center;   /* Center social icons */
+  gap: 1rem;                 /* Space between icons */
+  flex-wrap: wrap;           /* Allow icons to wrap on small screens */
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1); /* Semi-transparent background */
+  border-radius: 50%;        /* Circular buttons */
+  font-size: 1.2rem;
+  color: var(--accent);
+  transition: all 0.3s ease; /* Smooth hover transitions */
+}
+
+.footer-social a:hover {
+  background: var(--accent);  /* Fill with accent color on hover */
+  color: var(--background);   /* Contrast text color */
+  transform: translateY(-3px) scale(1.1); /* Lift and scale effect */
+}
+
+/* COPYRIGHT SECTION STYLING */
+.footer-copy {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1); /* Subtle top border */
+  width: 100%;               /* Full width section */
+}
+
+
+/* =========== LETTERBOXD-STYLE REVIEW FORM - NO SCROLL =========== */
+
+.reviewForm {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.reviewForm::backdrop {
+  background: rgba(20, 24, 28, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.reviewContent {
+  padding: 1.5rem;
+  position: relative;
+  background: linear-gradient(135deg, rgba(20, 24, 28, 0.95) 0%, rgba(26, 40, 52, 0.9) 100%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 1.8rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 300;
+  z-index: 10;
+}
+
+.close:hover {
+  color: var(--accent);
+  background: rgba(189, 192, 7, 0.2);
+  transform: rotate(90deg);
+}
+
+.reviewContent h2 {
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.reviewContent h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* =========== COMPACT FORM LAYOUT =========== */
+.reviewContent form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.form-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.reviewContent label {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reviewContent input[type="text"],
+.reviewContent input[type="file"],
+.reviewContent select {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-family: 'Lexend';
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+.reviewContent input[type="text"]:focus,
+.reviewContent select:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 2px rgba(189, 192, 7, 0.2);
+}
+
+.reviewContent input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+}
+
+.reviewContent input[type="file"] {
+  padding: 0.6rem;
+  cursor: pointer;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.reviewContent input[type="file"]::-webkit-file-upload-button {
+  background: var(--accent);
+  color: var(--background);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.8rem;
+  font-family: 'Lexend';
+  font-weight: 500;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.reviewContent input[type="file"]::-webkit-file-upload-button:hover {
+  background: var(--navhover);
+}
+
+.reviewContent select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23bdc007' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 10px;
+}
+
+/* =========== COMPACT STAR RATING =========== */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  margin: 0.3rem 0 0.5rem;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0;
+  padding: 0.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+  color: var(--accent);
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(189, 192, 7, 0.5);
+}
+
+/* =========== COMPACT MEDIA PREVIEW =========== */
+#previewArea {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  min-height: 80px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+#previewArea:has(.preview-item) {
+  border-color: rgba(189, 192, 7, 0.3);
+  background: rgba(189, 192, 7, 0.05);
+}
+
+.preview-item {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.preview-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.preview-item img,
+.preview-item video {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.preview-item audio {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.remove-preview {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(242, 31, 7, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.preview-item:hover .remove-preview {
+  opacity: 1;
+}
+
+.remove-preview:hover {
+  background: var(--primary);
+  transform: scale(1.1);
+}
+
+/* =========== COMPACT TAGS SYSTEM =========== */
+#tagInput {
+  margin-bottom: 0.5rem;
+  border-radius: 20px;
+  padding: 0.6rem 0.8rem;
+}
+
+#tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  min-height: 40px;
+  max-height: 80px;
+  overflow-y: auto;
+  padding: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tag {
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  color: var(--background);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  animation: tagSlideIn 0.2s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tag-remove {
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: var(--background);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.tag-remove:hover {
+  background: rgba(0, 0, 0, 0.4);
+  transform: scale(1.1);
+}
+
+/* =========== SUBMIT BUTTON =========== */
+.reviewContent button[type="submit"] {
+  background: linear-gradient(135deg, var(--accent), var(--navhover));
+  color: var(--background);
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviewContent button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.reviewContent button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(189, 192, 7, 0.4);
+}
+
+.reviewContent button[type="submit"]:hover::before {
+  left: 100%;
+}
+
+.reviewContent button[type="submit"]:active {
+  transform: translateY(-1px);
+}
+
+/* =========== ANIMATIONS =========== */
+@keyframes tagSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* =========== TABLET & MOBILE RESPONSIVE STYLES =========== */
+@media (max-width: 1024px) {
+
+  /* Header adjustments for mobile */
+  header {
+    background-color: var(--bgnav);
+    width: 100%;
+    height: auto;            /* Flexible height based on content */
+    position: sticky;        /* Stick to top when scrolling */
+    top: 0;
+    display: block;          /* Reset flex display */
+  }
+  
+  /* Mobile navbar layout */
+  .navbar {
+    flex-direction: row;     /* Keep logo and hamburger side by side */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 0;
+  }
+
+  /* Mobile menu toggle button */
+  .menu-toggle {
+    display: block;          /* Show hamburger menu icon */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--navtext);
+    cursor: pointer;
+    z-index: 1100;           /* Ensure it's above other content */
+  }
+
+  /* Mobile navigation links - hidden off-screen by default */
+  .nav-links {
+    position: absolute;
+    top: 100%;               /* Position below navbar */
+    left: -100%;             /* Hidden off-screen to the left */
+    display: flex;
+    flex-direction: column;  /* Stack links vertically */
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 60px); /* Full viewport height minus header */
+    background: var(--bgnav);
+    transition: left 0.3s ease; /* Smooth slide animation */
+    z-index: 1050;
+    padding-top: 2rem;
+  }
+
+  /* Active state for mobile menu - slides into view */
+  .nav-links.active {
+    left: 0; /* Slide in from left */
+  }
+
+  /* Mobile menu list items */
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    margin: 1rem 0;
+  }
+
+  .nav-links a:hover {
+    background-color: var(--accent);
+    color: var(--bgnav);
+  }
+
+  /* Mobile search bar styling */
+  .nav-search {
+    width: 80%;              /* Responsive width */
+    margin-top: 1rem;
+  }
+
+  .nav-search input {
+    width: 100%;             /* Full width input */
+  }
+
+  /* Mobile dropdown menu adjustments */
+  .dropdown-menu {
+    position: static;        /* Remove absolute positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: none;        /* Remove background for mobile */
+    box-shadow: none;        /* Remove shadow for mobile */
+  }
+
+  .dropdown-menu a {
+    padding: 10px;
+    font-size: 0.95rem;
+    color: var(--navtext);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-menu a:hover {
+    background: var(--accent);
+    border-radius: 5px;
+  }
+
+  /* Hide "Categories ▾" text in mobile view */
+  .dropdown > a {
+    display: none;
+  }
+
+  /* Mobile search bar layout */
+  .nav-search {
+    width: 100%;
+    margin: 0.5rem 0;
+    justify-content: center;
+  }
+
+  .nav-search input {
+    flex: 1;
+    max-width: 300px;        /* Limit maximum width */
+  }
+
+  /* Mobile logo and login positioning */
+  .logo,
+  .login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  /* Mobile footer layout */
+  .footers {
+    flex-direction: column;  /* Stack footer sections vertically */
+    align-items: center;
+  }
+
+  .footers section {
+    max-width: 90%;          /* Responsive width with margins */
+    margin-bottom: 1.5rem;
+  }
+
+  .reviewForm {
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  .reviewContent {
+    padding: 1.5rem;
+  }
+  
+  .reviewContent h2 {
+    font-size: 1.5rem;
+  }
+  
+  .star-rating label {
+    font-size: 1.5rem;
+  }
+  
+  #previewArea {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+}
+
+/*Put by AAnesipho*/
+/* Mobile search toggle */
+.search-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--navtext);
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+/* Hide search form by default on mobile */
+.nav-search {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 1024px) {
+    .search-toggle {
+        display: block; /* Show search icon */
+    }
+
+    .nav-search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-height: 0; /* Hidden initially */
+        opacity: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-search.active {
+        max-height: 500px; /* Enough to show inputs */
+        opacity: 1;
+        padding: 0.5rem 0;
+    }
+
+    .nav-search input,
+    .nav-search select,
+    .nav-search button {
+        width: 90%;
+        max-width: 300px;
+        margin: 0.3rem 0;
+        border-radius: 20px;
+    }
+}
+/*added more-Ane*/
+/* Desktop / tablet - inline search + category */
+.nav-search {
+  display: none;             /* Hidden by default, shown when scrolled */
+}
+
+.scrolled .nav-search{
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    /*gap: 0.4rem;            Small gap between input, select, and button */
+    gap:0;
+    margin-left: auto;
+}
+
+/* Input styling */
+.nav-search input {
+    padding: 6px 12px;
+    border-radius: 20px 0 0 20px; /* Rounded left side only */
+    border: 1px solid var(--search);
+    outline: none;
+    font-family: 'Lexend';
+    height: 38px;          /* Match height with select and button */
+    flex: 1;               /* Fill available horizontal space */
+    box-sizing: border-box;
+}
+
+/* Category select styling */
+.nav-search select {
+    padding: 6px 12px;
+    border: 1px solid var(--search);
+    border-radius: 0;      /* No extra rounding */
+    outline: none;
+    font-family: 'Lexend';
+    height: 38px;           /* Match input height */
+    box-sizing: border-box;
+    background-color: var(--bgnav);
+    color: var(--navtext);
+    cursor: pointer;
+}
+
+/* Submit button */
+.nav-search button {
+    height: 38px;           /* Match input & select */
+    border-radius: 0 20px 20px 0; /* Rounded right side */
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+
