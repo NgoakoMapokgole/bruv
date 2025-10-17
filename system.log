@@ -1,0 +1,8 @@
+[2025-10-12 13:24:32][ERROR][LOGIN_FAIL][UserID: N/A][IP: 146.231.125.131] Failed login attempt for user: ngoakomapokgolework@gmail.com. Attempt 1 of 3.
+[2025-10-12 13:24:36][ERROR][LOGIN_FAIL][UserID: N/A][IP: 146.231.125.131] Failed login attempt for user: ngoakomapokgolework@gmail.com. Attempt 2 of 3.
+[2025-10-12 13:24:40][ERROR][LOGIN_FAIL][UserID: N/A][IP: 146.231.125.131] Failed login attempt for user: ngoakomapokgolework@gmail.com. Attempt 3 of 3.
+[2025-10-12 13:24:44][WARNING][BRUTE_FORCE][UserID: N/A][IP: 146.231.125.131] Attempted login on locked account for user: ngoakomapokgolework@gmail.com
+[2025-10-12 20:09:29][ERROR][LOGIN_FAIL][UserID: 4][IP: 146.231.107.106] Failed login attempt for user: themba@lethu.co.za. Attempt 1 of 3.
+[2025-10-12 20:09:40][ERROR][LOGIN_FAIL][UserID: 4][IP: 146.231.107.106] Failed login attempt for user: themba@lethu.co.za. Attempt 2 of 3.
+[2025-10-12 20:36:24][ERROR][LOGIN_FAIL][UserID: 4][IP: 146.231.107.106] Failed login attempt for user: themba@lethu.co.za. Attempt 1 of 3.
+[2025-10-12 22:35:54][ERROR][LOGIN_FAIL][UserID: N/A][IP: 146.231.107.103] Failed login attempt for user: mAINSITIATION. Attempt 1 of 3.

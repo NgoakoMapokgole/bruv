@@ -1,0 +1,284 @@
+/* =========== EDIT POST SPECIFIC STYLES =========== */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        #bruh {
+            background: linear-gradient(135deg, rgba(20, 24, 28, 0.95) 0%, rgba(26, 40, 52, 0.9) 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        fieldset {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        legend {
+            color: var(--accent);
+            font-weight: 600;
+            padding: 0 0.8rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        #bruh {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+.form-group select option{
+    color: #180401;
+}
+
+p select option{
+    color: #180401;
+}
+        .bruv input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.7rem 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
+            font-family: 'Lexend';
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        .bruv input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 2px rgba(189, 192, 7, 0.2);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input[readonly] {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.6);
+            cursor: not-allowed;
+        }
+
+        /* =========== STAR RATING =========== */
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            gap: 0.2rem;
+            margin: 0.3rem 0 0.5rem;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin: 0;
+            padding: 0.1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: var(--accent);
+            transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(189, 192, 7, 0.5);
+        }
+
+        /* =========== MEDIA ITEMS GRID =========== */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .media-item {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .media-item:hover {
+            border-color: rgba(189, 192, 7, 0.3);
+            background: rgba(189, 192, 7, 0.05);
+        }
+
+        .media-item h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* =========== CHECKBOX STYLING =========== */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            transform: scale(1.2);
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            text-transform: none;
+            font-size: 0.9rem;
+            letter-spacing: normal;
+        }
+
+        /* =========== #bruh FOOTER =========== */
+        #bruh footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #yuh[type="submit"] {
+            background: linear-gradient(135deg, var(--accent), var(--navhover));
+            color: var(--background);
+            border: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #yuh[type="submit"]::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        #yuh[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(189, 192, 7, 0.4);
+        }
+
+        #yuh[type="submit"]:hover::before {
+            left: 100%;
+        }
+
+        #bruh footer a {
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.7rem 1.2rem;
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        #bruh footer a:hover {
+            background: var(--accent);
+            color: var(--background);
+        }
+
+        /* =========== RESPONSIVE STYLES =========== */
+        @media (max-width: 768px) {
+            main {
+                margin: 1rem auto;
+                padding: 0 0.5rem;
+            }
+            
+            #bruh {
+                padding: 1.5rem;
+            }
+            
+            fieldset {
+                padding: 1rem;
+            }
+            
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #bruh footer {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            #yuh[type="submit"],
+            #bruh footer a {
+                width: 100%;
+                text-align: center;
+            }
+        }

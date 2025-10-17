@@ -1,0 +1,1255 @@
+/* ====================================== HOMEPAGE STYLES =========================================== */
+
+/* =========== MAIN SEARCH HERO SECTION =========== */
+.mainSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* Vertically center content */
+  align-items: center;        /* Horizontally center content */
+  text-align: center;
+  padding: 5rem 2rem;
+  height: 100vh;              /* Full viewport height for hero section */
+}
+
+/* Main heading in hero section */
+.mainSearch h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Search bar container */
+.main-search {
+  display: flex;
+  width: 100%;
+  max-width: 600px;           /* Limit maximum width for larger screens */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 50px;        /* Fully rounded ends for modern look */
+  overflow: hidden;           /* Contain child elements within rounded corners */
+}
+
+/* Search input field */
+.main-search input {
+  flex: 1;                    /* Take up all available space */
+  padding: 15px 20px;
+  border: none;
+  outline: none;              /* Remove default browser outline */
+  font-size: 1rem;
+}
+
+/* Search button */
+.main-search button {
+  padding: 0 20px;
+  border: none;
+  background: var(--accent);  /* Use accent color for prominence */
+  color: var(--bgnav);        /* Contrast text color */
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.main-search button:hover {
+  background: var(--navhover); /* Hover state with navhover color */
+}
+
+/* =========== CATEGORY OPTIONS SECTION =========== */
+.looking {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.looking h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+/* Grid layout for category options */
+.looking .options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid with equal-width columns */
+  gap: 2rem;                  /* Space between grid items */
+  justify-items: stretch;     /* Stretch items to fill grid cells */
+}
+
+/* Individual category cards */
+.looking article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 160px;          /* Consistent height for all cards */
+  width: 100%;                /* Fill the grid column completely */
+  
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--bgnav);   /* Use navigation background color for contrast */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;            /* Indicate interactivity */
+}
+
+/* Hover effects for category cards */
+.looking article:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Category icons */
+.looking i {
+  font-size: 2.5rem;
+  color: var(--accent);       /* Accent color for icons */
+  margin-bottom: 0.5rem;
+}
+
+/* Category titles */
+.looking h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--navtext);      /* Use navtext color for readability on light background */
+}
+
+/* =========== REVIEWS SECTION =========== */
+
+/* Reviews container */
+.reviews {
+  max-width: 1200px;          /* Limit width for better readability */
+  margin: 0 auto;             /* Center the section */
+  padding: 2rem 1rem;
+  color: var(--text);
+}
+
+/* Section headings */
+.reviews h2 {
+  text-align: center;
+  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+
+/* Featured review heading specific styling */
+.featured-review h2 {
+  color: var(--text);
+  font-size: 2.2rem;          /* Slightly larger for emphasis */
+}
+
+/* All reviews heading */
+.all-reviews h2 {
+  color: var(--text);
+  margin-top: 3rem;           /* Extra space above section */
+}
+
+/* =========== REVIEW CARDS =========== */
+/* ==================== LETTERBOXD-STYLE 2-COLUMN LAYOUT ==================== */
+
+/* Main Container */
+.all-reviews {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 2-Column Grid Layout */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Review Cards */
+.review-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    animation: fadeInUp 0.5s ease-out;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.review-card.expanded {
+    max-height: none;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(189, 192, 7, 0.2);
+    border-color: var(--accent);
+}
+
+/* Review Header with Profile Picture */
+.review-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reviewer-profPic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    flex-shrink: 0;
+}
+
+.reviewer-profPic.placeholder {
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--background);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.review-header-content {
+    flex: 1;
+}
+
+.review-title {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    
+}
+
+.review-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.author-name {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.author-name:hover {
+    color: var(--navhover);
+    text-decoration: underline;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Review Rating */
+.review-rating {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* Review Content with Read More */
+.review-content {
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0.5rem 0 1rem;
+    opacity: 0.9;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fade effect for long content */
+.review-content:not(.expanded) {
+    max-height: 120px;
+}
+
+.review-content:not(.expanded)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(transparent, rgba(20, 24, 28, 0.9));
+    pointer-events: none;
+}
+
+/* Read More Button */
+.read-more-btn {
+    background: rgba(189, 192, 7, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Lexend';
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.read-more-btn:hover {
+    background: rgba(189, 192, 7, 0.2);
+    transform: translateY(-2px);
+}
+
+.read-more-btn.expanded::after {
+    content: ' Show Less';
+}
+
+.read-more-btn:not(.expanded)::after {
+    content: ' Read More';
+}
+
+/* Review Media */
+.review-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.media-item {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.media-item:hover {
+    transform: scale(1.05);
+}
+
+/* No Image State */
+.review-card:has(.review-media:empty) {
+    /* Additional styling for cards without images */
+}
+
+/* Review Tags */
+.review-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.review-tag {
+    background: rgba(189, 192, 7, 0.2);
+    color: var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.review-tag:hover {
+    background: rgba(189, 192, 7, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Review Actions */
+.review-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.like-btn, .dislike-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Lexend';
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.like-btn:hover {
+    background: linear-gradient(135deg, var(--accent) 0%, #a8ab06 100%);
+    color: var(--background);
+    transform: scale(1.05);
+}
+
+.dislike-btn:hover {
+    background: linear-gradient(135deg, var(--primary) 0%, #c2190a 100%);
+    color: var(--background);
+    transform: scale(1.05);
+}
+
+/* Comments Section */
+.comments {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.comments h4 {
+    color: var(--accent);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.3rem;
+}
+
+.comment-list {
+    margin-bottom: 1rem;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.comment {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid var(--accent);
+    transition: background-color 0.2s ease;
+}
+
+.comment:hover {
+    background-color: rgba(189, 192, 7, 0.1);
+}
+
+.comment strong {
+    color: var(--accent);
+}
+
+.comment-date {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text);
+    opacity: 0.6;
+    margin-top: 0.3rem;
+}
+
+.no-comments {
+    color: var(--text);
+    opacity: 0.7;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Comment Forms */
+.comment-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    font-family: 'Lexend';
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.comment-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(189, 192, 7, 0.2);
+}
+
+.comment-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.comment-submit {
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    border: none;
+    background: var(--accent);
+    color: var(--background);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Lexend';
+}
+
+.comment-submit:hover {
+    background: var(--navhover);
+    transform: translateY(-2px);
+}
+
+/* Toggle Comments Button */
+.toggle-comments {
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Lexend';
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.toggle-comments:hover {
+    background: rgba(189, 192, 7, 0.1);
+}
+
+.comment-section {
+    margin-top: 1rem;
+}
+
+/* Featured Review - Full Width */
+.featured-review .review-card {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    border: 2px solid var(--accent);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(189, 192, 7, 0.05) 100%);
+    position: relative;
+    max-height: 600px;
+}
+
+.featured-review .review-card.expanded {
+    max-height: none;
+}
+
+.featured-review .review-card::before {
+    content: '⭐ Featured Review';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--background);
+    padding: 0.4rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* =========== RESPONSIVE DESIGN =========== */
+@media (max-width: 1024px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .featured-review .review-card {
+        max-width: 100%;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .review-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .comment-form {
+        flex-direction: column;
+    }
+    
+    .review-content:not(.expanded) {
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .all-reviews {
+        padding: 1rem 0.5rem;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .review-card {
+        padding: 1rem;
+        margin: 0.5rem 0;
+        max-height: 450px;
+    }
+    
+    .featured-review .review-card {
+        max-height: 500px;
+    }
+    
+    .review-title {
+        font-size: 1.1rem;
+    }
+    
+    .featured-review h2,
+    .all-reviews h2 {
+        font-size: 1.6rem;
+    }
+    
+    .comment-input {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .comment-submit {
+        width: 100%;
+    }
+    
+    .review-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .like-btn, .dislike-btn {
+        justify-content: center;
+    }
+    
+    .review-content:not(.expanded) {
+        max-height: 80px;
+    }
+    
+    .reviewer-profPic {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Focus states for accessibility */
+.review-card:focus-within {
+    box-shadow: 0 0 0 3px rgba(189, 192, 7, 0.3);
+}
+
+button:focus,
+input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* =========== TABLET RESPONSIVE STYLES (max-width: 1024px) =========== */
+@media (max-width: 1024px) {
+    
+  .reviews {
+    padding: 1rem 0.5rem;     /* Reduced padding on tablets */
+  }
+  
+  .reviews h2 {
+    font-size: 1.6rem;        /* Smaller headings on tablets */
+  }
+  
+  .all-reviews {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 1rem;
+  }
+  
+  .featured-review .review-card,
+  .all-reviews .review-card {
+    width: 100%;              /* Full width cards on tablets */
+    margin: 0.5rem 0;
+  }
+  
+  .comment-input {
+    width: 60%;               /* Adjusted width for tablet */
+  }
+
+  /* Tablet adjustments for login bubble */
+  .loginBubble {
+    max-width: 90%;           /* Slightly narrower on tablets */
+    padding: 1.5rem;
+    gap: 1.5rem;
+    overflow: hidden;         /* Prevent content overflow */
+  }
+
+  .loginWords h3 {
+    font-size: 1.4rem;        /* Slightly smaller heading */
+  }
+
+  .loginWords p {
+    font-size: 1rem;
+  }
+
+  .loginBubble img {
+    max-width: 100%;          /* Responsive image sizing */
+    height: auto;
+    display: block;
+  }
+}
+
+/* =========== MOBILE RESPONSIVE STYLES (max-width: 600px) =========== */
+@media (max-width: 600px) {
+  .review-card {
+    padding: 1rem;            /* Reduced padding on mobile */
+    margin: 0.5rem 0;
+  }
+  
+  .comment-input {
+    width: 100%;              /* Full width input on mobile */
+    margin-bottom: 0.5rem;
+  }
+  
+  .comment-submit {
+    width: 100%;              /* Full width button on mobile */
+  }
+
+  /* Mobile adjustments for login bubble */
+  .loginBubble {
+    flex-direction: column;   /* Stack content vertically */
+    align-items: center;      /* Center align content */
+    max-width: 95%;           /* Almost full width on mobile */
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .loginWords h3 {
+    font-size: 1.2rem;        /* Smaller heading on mobile */
+    text-align: center;       /* Center aligned text */
+  }
+
+  .loginWords p {
+    font-size: 0.9rem;        /* Smaller text on mobile */
+    text-align: center;
+  }
+
+  .loginBubble img {
+    max-width: 80%;           /* Smaller image on mobile */
+    height: auto;
+    display: block;
+  }
+}
+
+/* =========== ANIMATIONS =========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);   /* End at normal position */
+  }
+}
+
+/* Apply fade-in animation to review cards */
+.review-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* =========== HOME PAGE REVIEWS STYLES =========== */
+
+/* Featured Review Section */
+.featured-review {
+    padding: 3rem 1rem;
+    background: rgba(189, 192, 7, 0.05);
+    border-top: 3px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
+    margin: 2rem 0;
+}
+
+.featured-review h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.featured-review h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* All Reviews Section */
+.all-reviews {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.all-reviews h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.all-reviews h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* Reviews Grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Review Cards */
+.review-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(189, 192, 7, 0.2);
+    border-color: var(--accent);
+}
+
+/* Featured Review Card */
+.featured-review .review-card {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid var(--accent);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(189, 192, 7, 0.05) 100%);
+    position: relative;
+}
+
+.featured-review .review-card::before {
+    content: '⭐ Featured Review';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--background);
+    padding: 0.4rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Review Header */
+.review-header {
+    margin-bottom: 1rem;
+}
+
+.review-title {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    
+    padding-left: 0.8rem;
+    margin-left: -1.5rem;
+}
+
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.review-author {
+    font-weight: 500;
+    color: var(--accent);
+}
+
+.review-date {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Review Rating */
+.review-rating {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Review Content */
+.review-content {
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+/* Review Media */
+.review-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.media-item {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.media-item:hover {
+    transform: scale(1.05);
+}
+
+/* Review Tags */
+.review-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.review-tag {
+    background: rgba(189, 192, 7, 0.2);
+    color: var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.review-tag:hover {
+    background: rgba(189, 192, 7, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Like/Dislike Buttons */
+.review-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.like-btn, .dislike-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Lexend';
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.like-btn:hover {
+    background: linear-gradient(135deg, var(--accent) 0%, #a8ab06 100%);
+    color: var(--background);
+    transform: scale(1.05);
+}
+
+.dislike-btn:hover {
+    background: linear-gradient(135deg, var(--primary) 0%, #c2190a 100%);
+    color: var(--background);
+    transform: scale(1.05);
+}
+
+.like-btn.active {
+    background: rgba(76, 175, 80, 0.3);
+    border-color: #4CAF50;
+}
+
+.dislike-btn.active {
+    background: rgba(244, 67, 54, 0.3);
+    border-color: #F44336;
+}
+
+/* Comments Section */
+.comments {
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.comments h4 {
+    color: var(--accent);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.3rem;
+}
+
+.comment-list {
+    margin-bottom: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.comment {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid var(--accent);
+    transition: background-color 0.2s ease;
+}
+
+.comment:hover {
+    background-color: rgba(189, 192, 7, 0.1);
+}
+
+.comment strong {
+    color: var(--accent);
+}
+
+.comment-date {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text);
+    opacity: 0.6;
+    margin-top: 0.3rem;
+}
+
+.no-comments {
+    color: var(--text);
+    opacity: 0.7;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Comment Forms */
+.comment-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    font-family: 'Lexend';
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.comment-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(189, 192, 7, 0.2);
+}
+
+.comment-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.comment-submit {
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    border: none;
+    background: var(--accent);
+    color: var(--background);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Lexend';
+}
+
+.comment-submit:hover {
+    background: var(--navhover);
+    transform: translateY(-2px);
+}
+
+.login-prompt {
+    text-align: center;
+    color: var(--text);
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+.login-prompt a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Toggle Comments Button */
+.toggle-comments {
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Lexend';
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.toggle-comments:hover {
+    background: rgba(189, 192, 7, 0.1);
+}
+
+.comment-section {
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .reviews-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .featured-review .review-card {
+        max-width: 90%;
+    }
+    
+    .review-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .comment-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .featured-review,
+    .all-reviews {
+        padding: 2rem 0.5rem;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .review-card {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .review-title {
+        font-size: 1.1rem;
+        margin-left: -1rem;
+        padding-left: 0.6rem;
+    }
+    
+    .featured-review h2,
+    .all-reviews h2 {
+        font-size: 1.6rem;
+    }
+    
+    .comment-input {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .comment-submit {
+        width: 100%;
+    }
+    
+    .review-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .like-btn, .dislike-btn {
+        justify-content: center;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure compatibility with existing styles */
+.rest-review-cards {
+    display: none; /* Hide old review cards if they exist */
+}
+
+/* Focus states for accessibility */
+.review-card:focus-within {
+    box-shadow: 0 0 0 3px rgba(189, 192, 7, 0.3);
+}
+
+button:focus,
+input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
